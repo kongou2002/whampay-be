@@ -13,6 +13,7 @@ import { appConfig } from './config/config';
 import { WalletModule } from './wallet/wallet.module';
 import { UserModule } from './user/user.module';
 import { FriendshipModule } from './friendship';
+import { TransactionModule } from './transaction/transaction.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { FriendshipModule } from './friendship';
     UserModule,
     AuthModule,
     FriendshipModule,
+    TransactionModule
   ],
   controllers: [],
   providers: [],
