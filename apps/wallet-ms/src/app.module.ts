@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { appConfig } from './config/config';
 import { WalletModule } from './wallet/wallet.module';
 import { UserModule } from './user/user.module';
+import { FriendshipModule } from './friendship';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { UserModule } from './user/user.module';
     WalletModule,
     UserModule,
     AuthModule,
+    FriendshipModule,
   ],
   controllers: [],
   providers: [],
