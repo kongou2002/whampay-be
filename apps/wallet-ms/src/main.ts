@@ -1,6 +1,7 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@pay-wallet/common';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import helmet from 'helmet';
@@ -11,6 +12,7 @@ async function bootstrap() {
   const globalPrefix = 'v1';
   app.setGlobalPrefix(globalPrefix);
   app.use(cookieParser());
+  app.useGlobalPipes(new ValidationPipe());
   // Swagger setup
   const config = new DocumentBuilder()
     .setTitle('Pay Wallet API')
