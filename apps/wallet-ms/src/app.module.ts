@@ -10,10 +10,13 @@ import {
 } from '@pay-wallet/common';
 import { AuthModule } from './auth/auth.module';
 import { appConfig } from './config/config';
-import { WalletModule } from './wallet/wallet.module';
-import { UserModule } from './user/user.module';
-import { FriendshipModule } from './friendship';
+import { FriendshipModule } from './friendship/friendship.module';
+import { HealthModule } from './health/health.module';
+import { NFTModule } from './nft/nft.module';
+import { TokenModule } from './token/token.module';
 import { TransactionModule } from './transaction/transaction.module';
+import { UserModule } from './user/user.module';
+import { WalletModule } from './wallet/wallet.module';
 
 @Module({
   imports: [
@@ -25,12 +28,15 @@ import { TransactionModule } from './transaction/transaction.module';
     EventEmitterModule.forRoot(),
     MongoDbModule,
     WalletModule,
-    UserModule,
+    TransactionModule,
     AuthModule,
+    UserModule,
+    HealthModule,
+    TokenModule,
     FriendshipModule,
-    TransactionModule
+    NFTModule,
   ],
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
